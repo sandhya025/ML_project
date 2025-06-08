@@ -4,8 +4,7 @@ import os
 
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb=error_detail.exc_info()
-    file_name=exc_tb.tb_frame.f_code.co_filename
-    error_message="There is a error in file [{0}] in line [{1}] error message is [{2}]".format(file_name,exc_tb.tb_lineno,str(error))
+    error_message="There is a error in file [{0}] in line [{1}] error message is [{2}]".format(exc_tb.tb_frame.f_code.co_filename,exc_tb.tb_lineno,str(error))
     return error_message
 
 class CustomException(Exception):
